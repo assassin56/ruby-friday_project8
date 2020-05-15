@@ -25,6 +25,14 @@ describe('#Class_Dictionary') do
     end
   end
 
+  describe('#update') do
+    it('updates a word based on id') do
+      class_dict = Class_Dictionary.new({:name => "Word", :id => nil})
+      class_dict.save()
+      class_dict.update("Conceive")
+      expect(class_dict.name).to(eq("Word")) 
+    end
+  end
   describe('#save') do
     it('updates the dictionary with a new word') do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})

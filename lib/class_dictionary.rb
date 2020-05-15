@@ -44,4 +44,9 @@ class Class_Dictionary
   def ==(word_to_compare)
     self.name() == word_to_compare.name()
   end
+
+  def update(name)
+    self.name = name
+    self.save()
+  end
 end
