@@ -49,4 +49,8 @@ class Class_Dictionary
     self.name = name
     self.save()
   end
+
+  def delete
+    @@dictionary.delete(self.id)
+  end
 end

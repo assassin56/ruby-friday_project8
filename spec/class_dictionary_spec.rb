@@ -69,4 +69,15 @@ describe('#Class_Dictionary') do
       expect(class_dict).to(eq(class_dict2))
     end
   end
+
+  describe('#delete') do
+    it('deletes a word by id') do
+      class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
+      class_dict.save()
+      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2.save()
+      class_dict.delete()
+      expect(Class_Dictionary.all).to(eq(false))
+    end
+  end
 end
