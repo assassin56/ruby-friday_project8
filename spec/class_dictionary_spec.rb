@@ -46,7 +46,6 @@ describe('#Class_Dictionary') do
       class_dict4 = Class_Dictionary.new({:name => "Thurough Consistency", :id => nil})
       class_dict4.save()
       expect(Class_Dictionary.search("consistency")).to(eq([[class_dict], [class_dict4]]))
-      # class_dict4.save()
     end
   end
 
