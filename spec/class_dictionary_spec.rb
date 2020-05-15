@@ -10,7 +10,7 @@ describe('#Class_Dictionary') do
 
   describe('.all') do
     it('this test should return an empty array when there are no words in the dictionary') do
-      expect(Class_Dictionary.all).to(eq(false))
+      expect(Class_Dictionary.all).to(eq([]))
     end
   end
 end
