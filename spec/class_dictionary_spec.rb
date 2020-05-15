@@ -25,14 +25,25 @@ describe('#Class_Dictionary') do
     end
   end
 
+  describe('.find') do
+    it('this test should find a word by id') do
+      class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
+      class_dict.save()
+      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2.save()
+      expect(Class_Dictionary.find(class_dict.id)).to(eq(class_dict2))
+    end
+  end
+
   describe('#update') do
     it('updates a word based on id') do
       class_dict = Class_Dictionary.new({:name => "Word", :id => nil})
       class_dict.save()
       class_dict.update("Conceive")
-      expect(class_dict.name).to(eq("Word")) 
+      expect(class_dict.name).to(eq("Conceive")) 
     end
   end
+
   describe('#save') do
     it('updates the dictionary with a new word') do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
