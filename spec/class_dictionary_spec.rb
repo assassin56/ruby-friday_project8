@@ -77,7 +77,7 @@ describe('#Class_Dictionary') do
       class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
       class_dict2.save()
       class_dict.delete()
-      expect(Class_Dictionary.all).to(eq(false))
+      expect(Class_Dictionary.all).to(eq([class_dict2]))
     end
   end
 end
