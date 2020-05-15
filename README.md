@@ -39,6 +39,9 @@ _No known bugs at this time_
 
 ## Specs
 
+* Behavior: Create a Dictionary for multiple word entries 
+  * Input: New word, "Consistency"
+  * Output: Post word to Dictionary
 
 ## Legal
 
