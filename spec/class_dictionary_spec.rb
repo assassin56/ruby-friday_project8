@@ -35,6 +35,21 @@ describe('#Class_Dictionary') do
     end
   end
 
+  describe('.search') do
+    it("returns an array of words that have a name that includes the search term regardless of case") do
+      class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
+      class_dict.save()
+      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2.save()
+      class_dict3 = Class_Dictionary.new({:name => "Arbitrary", :id => nil})
+      class_dict3.save()
+      class_dict4 = Class_Dictionary.new({:name => "Thurough Consistency", :id => nil})
+      class_dict4.save()
+      expect(Class_Dictionary.search("Fail")).to(eq([[class_dict], [class_dict4]]))
+      # class_dict4.save()
+    end
+  end
+
   describe('#update') do
     it('updates a word based on id') do
       class_dict = Class_Dictionary.new({:name => "Word", :id => nil})
