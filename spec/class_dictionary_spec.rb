@@ -22,17 +22,27 @@ describe('#Class_Dictionary') do
 
   describe('#save') do
     it('updates the dictionary with a new word') do
-      class_dict = Class_Dictionary.new({
-        :name => "Consistency",
-        :id => nil
-      })
+      class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
       class_dict.save()
       class_dict2 = Class_Dictionary.new({
         :name => "Monotany",
         :id => nil
       })
       class_dict2.save()
-      expect(Class_Dictionary.all).to(eq(false))
+      expect(Class_Dictionary.all).to(eq([class_dict, class_dict2]))
+    end
+  end
+
+  describe('#==') do
+    it('checks for the same word if it has the same attributes as another word') do
+      class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
+      class_dict.save()
+      class_dict2 = Class_Dictionary.new({
+        :name => "Wrong",
+        :id => nil
+      })
+      class_dict2.save()
+      expect(class_dict).to(eq(class_dict2))
     end
   end
 end
