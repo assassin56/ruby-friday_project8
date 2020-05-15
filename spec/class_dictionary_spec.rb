@@ -14,11 +14,16 @@ describe('#Class_Dictionary') do
     end
   end
 
-  # describe('.clear') do
-  #   it('clears the dictionary of all words') do
-      
-  #   end
-  # end
+  describe('.clear') do
+    it('clears the dictionary of all words') do
+      class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
+      class_dict.save()
+      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2.save()
+      Class_Dictionary.clear
+      expect(Class_Dictionary.all).to(eq(false))
+    end
+  end
 
   describe('#save') do
     it('updates the dictionary with a new word') do
