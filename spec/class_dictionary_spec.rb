@@ -31,7 +31,7 @@ describe('#Class_Dictionary') do
       class_dict.save()
       class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
       class_dict2.save()
-      expect(Class_Dictionary.find(class_dict.id)).to(eq(class_dict2))
+      expect(Class_Dictionary.find(class_dict.id)).to(eq(class_dict))
     end
   end
 
