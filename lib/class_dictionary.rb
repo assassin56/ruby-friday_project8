@@ -22,4 +22,12 @@ class Class_Dictionary
   def self.find(id)
     @@dictionary[id]
   end
+
+  def save()
+    @@dictionary[self.id] = Class_Dictionary.new({
+      :name => self.name,
+      :id => self.id
+    })
+  end
+
 end
