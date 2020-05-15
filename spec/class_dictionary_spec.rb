@@ -38,7 +38,7 @@ describe('#Class_Dictionary') do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
       class_dict.save()
       class_dict2 = Class_Dictionary.new({
-        :name => "Wrong",
+        :name => "Consistency",
         :id => nil
       })
       class_dict2.save()
