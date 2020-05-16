@@ -5,8 +5,13 @@ require('./lib/class_dictionary')
 require('pry')
 also_reload('lib/**/*.rb')
 
-get('/') do
-  @dictionary = Class_Dictionary.all
-  erb(:class_dictionary)
+
+get('/test') do
+  @something = "this is a variable"
+  erb(:whatever)
 end
 
+get('/') do
+  @dictionary = Class_Dictionary.all
+  erb(:dictionary)
+end
