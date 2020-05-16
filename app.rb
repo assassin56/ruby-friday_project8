@@ -9,3 +9,4 @@ get('/') do
   @dictionary = Class_Dictionary.all
   erb(:class_dictionary)
 end
+
