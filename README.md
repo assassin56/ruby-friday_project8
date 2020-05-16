@@ -2,24 +2,24 @@
 ## _By: Antonio Cruz_
 ## Description
 
-__
+_This is a webpage that will allow uers to add words they may be unfamiliar with to a page, and include their corresponding definitions _
 
 ## Setup
 
 
 1. If you would like to view this project locally... :
 
-2. Visit this link https://github.com/assassin56/ruby-friday_project7
+2. Visit this link https://github.com/assassin56/ruby-friday_project8
  
 3. Clone this repo by selecting the "clone or download" button. This will allow you to copy the repo's link.
 
 4. While on the command line in your terminal, enter "git clone" followed by the copied url.
 
-5. Enter "ls" to show a list of files and documents. One of them will be labeled "ruby-friday_project4. Use "cd" followed by the project directory name to navigate there.
+5. Enter "ls" to show a list of files and documents. One of them will be labeled "ruby-friday_project8. Use "cd" followed by the project directory name to navigate there.
 
-6. While in project directory, open the contents of the directory, or use "code ." to enable the shortcut to open in Visual Studio Code.
+6. While in project directory, run the command "bundle"
 
-7. When the project opens, drag the file named "index.html" to your preferred browser to view and use the webpage!
+7. Run "ruby app.rb" to open the server."
 
 ## Known Bugs
 _No known bugs at this time_
@@ -43,6 +43,13 @@ _No known bugs at this time_
   * Input: New word, "Consistency"
   * Output: Post word to Dictionary
 
+* Behavior: Allow inputs for new words
+  * Input: "Consistency"
+  * Output: The word is added to the dictionary
+
+* Behavior: Allow the user to add definitions to their inputted words
+  * Input: Consistency: "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness."
+  * Output: The definition is stored with the selected word.
 ## Legal
 
 #### MIT License
