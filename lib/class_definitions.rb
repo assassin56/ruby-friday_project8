@@ -2,7 +2,7 @@ class Class_Definitions
   attr_reader :id
   attr_accessor :name
 
-  @@defintions = {}
+  @@definitions = {}
   @@total_rows = 0
   
   def initialize(attributes)
@@ -34,7 +34,7 @@ class Class_Definitions
   end
 
   def save
-    @@defintions[self.id] = Class_Definitions.new({
+    @@definitions[self.id] = Class_Definitions.new({
       :name => self.name,
       :id => self.id
     })
