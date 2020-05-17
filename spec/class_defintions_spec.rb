@@ -30,7 +30,7 @@ describe('#Class_Definitions') do
       class_def.save()
       class_def2 = Class_Definitions.new({:name => "lack of variety and interest; tedious repetition and routine.", :id => nil})
       class_def2.save()
-      expect(Class_Definitions.find(class_def.id)).to(eq(class_def2))
+      expect(Class_Definitions.find(class_def.id)).to(eq(class_def))
     end
   end
 end
