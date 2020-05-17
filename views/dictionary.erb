@@ -1,18 +1,22 @@
 <h1> Welcome to the Class Dictionary!<h1>
 <h3> We got words, and we got definitions </h3>
+
 <% if @dictionary.any? %>
   <ul>
     <% @dictionary.each do |word| %>
     <li><a href="/boards/<%= word.id %>"><%= word.name%></a></li>
     <% end %>
   </ul>
+  <% else %>
+  <p>There are currently no Words to display.</p>
 <% end %>
 
+<a href="/word/new">Click here to add a new word</a>
 <form action='/dictionary' method='post'>
   <div class='form-group'>
     <input id='word' name='new_words' class='form-control' type='text' placeholder='Put your new word here!'>
     <button type='submit' class='btn-danger'> Click here to create your new word!</button>
 
-<% @dictionary.sort_by(&:name).each do |album| %>
-  <li>
+<% @dictionary.sort_by(&:name).each do |word| %>
+  <li><a href="/boards/<%= word.id %>"><%= word.name%></a></li>
 <% end %>
