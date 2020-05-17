@@ -44,9 +44,8 @@ class Class_Definitions
     self.name() == definition_to_compare.name()
   end
 
-  def update(name, word_id)
+  def update(name)
     self.name = name
-    self.id = word_id
     self.save()
   end
 
