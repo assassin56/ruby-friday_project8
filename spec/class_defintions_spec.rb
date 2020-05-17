@@ -33,4 +33,13 @@ describe('#Class_Definitions') do
       expect(Class_Definitions.find(class_def.id)).to(eq(class_def))
     end
   end
+
+  describe('#update') do
+    it('updates a definition based on its id') do
+      class_def = Class_Definitions.new({:name => "none existent definition", :id => nil})
+      class_def.save()
+      class_def.update("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.")
+      expect(class_def.name).to(eq("false"))
+    end
+  end
 end
