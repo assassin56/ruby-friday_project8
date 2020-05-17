@@ -57,7 +57,7 @@ describe('#Class_Definitions') do
     it('checks for the same definition if it has the same attributes as another definition') do
       class_def = Class_Definitions.new({:name => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :id => nil})
       class_def.save()
-      class_def2 = Class_Definitions.new({:name => " in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :id => nil})
+      class_def2 = Class_Definitions.new({:name => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :id => nil})
       class_def2.save()
       expect(class_def).to(eq(class_def2))
     end
