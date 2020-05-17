@@ -40,8 +40,8 @@ class Class_Definitions
     })
   end
 
-  def ==(defintion_to_compare)
-    self.name() == word_to_compare.name()
+  def ==(definition_to_compare)
+    self.name() == definition_to_compare.name()
   end
 
   def update(name, word_id)
