@@ -62,4 +62,15 @@ describe('#Class_Definitions') do
       expect(class_def).to(eq(class_def2))
     end
   end
+
+  describe('#delete') do
+    it('deletes a definition by id') do
+      class_def = Class_Definitions.new({:name => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :id => nil})
+      class_def.save()
+      class_def2 = Class_Definitions.new({:name => "lack of variety and interest; tedious repetition and routine.", :id => nil})
+      class_def2.save()
+      # class_def.delete()
+      expect(Class_Definitions.all).to(eq([class_def2]))
+    end
+  end
 end
