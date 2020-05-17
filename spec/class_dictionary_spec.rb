@@ -1,7 +1,7 @@
 require 'rspec'
 require 'pry'
 require 'class_dictionary'
-require 'words'
+require 'class_definitions'
 
 describe('#Class_Dictionary') do
   before(:each) do
