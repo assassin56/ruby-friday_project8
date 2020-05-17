@@ -12,3 +12,7 @@
   <div class='form-group'>
     <input id='word' name='new_words' class='form-control' type='text' placeholder='Put your new word here!'>
     <button type='submit' class='btn-danger'> Click here to create your new word!</button>
+
+<% @dictionary.sort_by(&:name).each do |album| %>
+  <li>
+<% end %>
