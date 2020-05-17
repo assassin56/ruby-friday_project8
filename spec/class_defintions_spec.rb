@@ -39,7 +39,17 @@ describe('#Class_Definitions') do
       class_def = Class_Definitions.new({:name => "none existent definition", :id => nil})
       class_def.save()
       class_def.update("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.")
-      expect(class_def.name).to(eq("false"))
+      expect(class_def.name).to(eq("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness."))
+    end
+  end
+
+  describe('#save') do
+    it('updates the word with a new definition.') do
+      class_def = Class_Definitions.new({:name => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :id => nil})
+      class_def.save()
+      class_def2 = Class_Definitions.new({:name => "lack of variety and interest; tedious repetition and routine.", :id => nil})
+      class_def2.save()
+      expect(Class_Definitions.all).to(eq([]))
     end
   end
 end
