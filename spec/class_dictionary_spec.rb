@@ -18,7 +18,7 @@ describe('#Class_Dictionary') do
     it('clears the dictionary of all words') do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
       class_dict.save()
-      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2 = Class_Dictionary.new({:name => "Monotony", :id => nil})
       class_dict2.save()
       Class_Dictionary.clear
       expect(Class_Dictionary.all).to(eq([]))
@@ -29,7 +29,7 @@ describe('#Class_Dictionary') do
     it('this test should find a word by id') do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
       class_dict.save()
-      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2 = Class_Dictionary.new({:name => "Monotony", :id => nil})
       class_dict2.save()
       expect(Class_Dictionary.find(class_dict.id)).to(eq(class_dict))
     end
@@ -39,7 +39,7 @@ describe('#Class_Dictionary') do
     it("returns an array of words that have a name that includes the search term regardless of case") do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
       class_dict.save()
-      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2 = Class_Dictionary.new({:name => "Monotony", :id => nil})
       class_dict2.save()
       class_dict3 = Class_Dictionary.new({:name => "Arbitrary", :id => nil})
       class_dict3.save()
@@ -63,7 +63,7 @@ describe('#Class_Dictionary') do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
       class_dict.save()
       class_dict2 = Class_Dictionary.new({
-        :name => "Monotany",
+        :name => "Monotony",
         :id => nil
       })
       class_dict2.save()
@@ -88,7 +88,7 @@ describe('#Class_Dictionary') do
     it('deletes a word by id') do
       class_dict = Class_Dictionary.new({:name => "Consistency", :id => nil})
       class_dict.save()
-      class_dict2 = Class_Dictionary.new({:name => "Monotany", :id => nil})
+      class_dict2 = Class_Dictionary.new({:name => "Monotony", :id => nil})
       class_dict2.save()
       class_dict.delete()
       expect(Class_Dictionary.all).to(eq([class_dict2]))
