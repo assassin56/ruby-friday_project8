@@ -49,7 +49,7 @@ describe('#Class_Definitions') do
       class_def.save()
       class_def2 = Class_Definitions.new({:name => "lack of variety and interest; tedious repetition and routine.", :id => nil})
       class_def2.save()
-      expect(Class_Definitions.all).to(eq([]))
+      expect(Class_Definitions.all).to(eq([class_def, class_def2]))
     end
   end
 end
