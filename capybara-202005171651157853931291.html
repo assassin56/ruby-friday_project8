@@ -1,15 +1,9 @@
 <h1> Welcome to the Class Dictionary!<h1>
 <h3> We got words, and we got definitions </h3>
 
-<% if @dictionary.any? %>
 <ul>
-  <% @dictionary.sort_by(&:name).each do |word| %>
-    <li><a href="/boards/<%= word.id %>"><%= word.name%></a></li>
-  <% end %>
+    <li><a href="/boards/2">Monotony</a></li>
 </ul>
-  <% else %>
-  <p>There are currently no Words to display.</p>
-<% end %>
 
 <a href="/word/new">Add a new word!</a>
 
