@@ -16,3 +16,12 @@ get('/') do
   erb(:dictionary)
 end
 
+get('/dictionary') do
+  @dictionary = Class_Dictionary.all
+  erb(:dictionary)
+end
+
+get('/word/new') do
+  erb(:new_word)
+end
+
