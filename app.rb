@@ -24,9 +24,18 @@ get('/dictionary') do
   erb(:dictionary)
 end
 
+
 # methods pertaining to particular words #
 
 get('/word/new') do
+  erb(:new_word)
+end
+
+post('/word/new') do
+  name = params[:name]
+  class_dict = Class_Dictionary.new(:name)
+  class_dict.save()
+  @dictionary = Class_Dictionary.all()
   erb(:new_word)
 end
 

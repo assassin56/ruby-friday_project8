@@ -12,6 +12,6 @@ describe('creates a dictionary path', {:type => :feature}) do
     click_on('Add a new word!')
     fill_in('name', :with => 'Consistency')
     click_on('Go!')
-    expect(page).to have_content('false')
+    expect(page).to have_content('Consistency')
   end
 end

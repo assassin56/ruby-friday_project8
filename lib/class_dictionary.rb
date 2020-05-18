@@ -1,6 +1,6 @@
 class Class_Dictionary
-  attr_reader :id
-  attr_accessor :name
+  attr_reader :id, :name
+  attr_accessor :name, :id
 
   @@dictionary = {}
   @@total_rows = 0
