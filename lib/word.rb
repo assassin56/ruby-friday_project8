@@ -1,4 +1,4 @@
-class Class_Dictionary
+class Word
   attr_reader :id, :name
   attr_accessor :name, :id
 
@@ -24,18 +24,18 @@ class Class_Dictionary
   end
   
   def self.search(name)
-    new_words = Class_Dictionary.all.map { |word| word.name.downcase }
+    new_words = Word.all.map { |word| word.name.downcase }
     result = []
     words = new_words.grep(/#{name}/)
     words.each do |n|
-      display_words = Class_Dictionary.all.select { |word| word.name.downcase == n}
+      display_words = Word.all.select { |word| word.name.downcase == n}
       result.push(display_words)
     end
     result
   end
 
   def save
-    @@dictionary[self.id] = Class_Dictionary.new({
+    @@dictionary[self.id] = Word.new({
       :name => self.name,
       :id => self.id
     })

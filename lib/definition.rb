@@ -1,4 +1,4 @@
-class Class_Definitions
+class Definition
   attr_reader :id
   attr_accessor :name
 
@@ -34,7 +34,7 @@ class Class_Definitions
   end
 
   def save
-    @@definitions[self.id] = Class_Definitions.new({
+    @@definitions[self.id] = Definition.new({
       :name => self.name,
       :id => self.id
     })
