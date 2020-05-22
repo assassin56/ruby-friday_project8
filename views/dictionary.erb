@@ -1,19 +1,19 @@
 <h1> Welcome to the Class Dictionary!<h1>
 <h3> We got words, and we got definitions </h3>
 
-<% if @dictionary.any? %>
+<% if @names.any? %>
 <ul>
-  <% @dictionary.sort_by(&:name).each do |word| %>
-    <li><a href="/boards/<%= word.id %>"><%= word.name%></a></li>
+  <% @names.each do |name| %>
+    <li><a href="/word/:id/<%= name.id %>"><%= name.name%></a></li>
   <% end %>
 </ul>
   <% else %>
   <p>There are currently no Words to display.</p>
 <% end %>
 
-<a href="/word/new">Add a new word!</a>
+<a href="/dictionary/new">Add a new word!</a>
 
-<form action='/word/search' method='get'>
+<form action='/dictionary/search' method='get'>
   <div class='form-group'>
     <label for="name" >Search!</label>
     <input id='name' name='name' class='form-control' type='text'>
