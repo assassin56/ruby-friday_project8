@@ -24,7 +24,7 @@ class Definition
     @@definitions[id]
   end
 
-  def self.find_by_word(this_word_id) 
+  def self.find_by_word(word_id) 
     defs = []
     @@definitions.values.each do |definition|
       if definition.word_id == word_id

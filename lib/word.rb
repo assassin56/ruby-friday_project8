@@ -34,6 +34,10 @@ class Word
     result
   end
 
+  def definitions
+    Definition.find_by_word(self.id)
+  end
+
   def save
     @@dictionary[self.id] = Word.new({
       :name => self.name,
