@@ -1,12 +1,13 @@
 class Definition
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :definition, :word_id, :id
 
   @@definitions = {}
   @@total_rows = 0
   
   def initialize(attributes)
-    @name = attributes.fetch(:name)
+    @definition = attributes.fetch(:definition)
+    @word_id = attributes.fetch(:word_id)
     @id = attributes.fetch(:id) || @@total_rows += 1
   end
 
@@ -25,9 +26,9 @@ class Definition
 
   def self.find_by_word(this_word_id) 
     defs = []
-    @@definitions.values.each do |this_def|
-      if this_def.id == this_word_id
-        defs.push(this_def)
+    @@definitions.values.each do |definition|
+      if definition.word_id == word_id
+        defs.push(definition)
       end
     end
     defs
@@ -35,17 +36,18 @@ class Definition
 
   def save
     @@definitions[self.id] = Definition.new({
-      :name => self.name,
+      :definition => self.definition,
+      :word_id => self.word_id,
       :id => self.id
     })
   end
 
   def ==(definition_to_compare)
-    self.name() == definition_to_compare.name()
+    (self.definition() == definition_to_compare.definition()) && (self.word_id() == definition_to_compare.word_id())
   end
 
-  def update(name)
-    self.name = name
+  def update(definition)
+    self.definition = definition
     self.save()
   end
 
