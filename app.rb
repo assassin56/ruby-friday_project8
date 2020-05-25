@@ -56,41 +56,45 @@ post('/words/:id') do
 end
 
 delete('/words/:id') do
-  @names = Word.find(params[:id].to_i())
-  @names.delete()
-  @names = Word.all
+  @words = Word.find(params[:id].to_i())
+  @words.delete()
+  @words = Word.all
   erb(:words)
 end
 
-# get('/words/search') do
-#   @dictionary = Word.search(params[:name])
-#   erb(:search)
-# end
+get('/words/search') do
+  @search = Word.search(params[:word])
+  erb(:search)
+end
 
-# # methods pertaining to word definitions #
+# methods pertaining to word definitions #
 
-# get('/words/:id/definitions/:definition_id') do
-#   @definition = Definition.find(params[:definition_id].to_i())
-#   erb(:definition)
-# end
+get('/words/:id/definitions/:definition_id') do
+  @definition = Definition.find(params[:definition_id].to_i())
+  erb(:definition)
+end
 
-# post('/words/:id/definitions') do
-#   @dictionary = Word.find(params[:id].to_i())
-#   definition = Definition.find(params[:def_id].to_i())
-#   definition.save()
-#   erb(:definition)
-# end
+get('/words/:id/definitions') do
+  erb((:words))
+end
 
-# patch('/words/:id/defintions/:definition_id') do
-#   @dictionary = Word.find(params[:id].to_i())
-#   definition = Definition.find(params[:definition_id].to_i())
-#   definition.update(params[:name], @word.id)
-#   erb(:word)
-# end
+post('/words/:id/definitions') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.new(:definition => (params[:new_definition]), :word_id => @word.id, :id => nil)
+  definition.save
+  erb(:word)
+end
 
-# delete('/words/:id/defintions/:defintion_id') do
-#   defintion = Definition.find(params[:definition_id].to_i())
-#   definition.delete()
-#   @dicionary = Word.find(params[:id].to_i())
-#   erb(:word)
-# end
+patch('/words/:id/definitions/:definition_id') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.update(params[:edit_definition], @word.id)
+  erb(:word)
+end
+
+delete('/words/:id/definitions/:defintion_id') do
+  defintion = Definition.find(params[:definition_id].to_i())
+  definition.delete()
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
+end
