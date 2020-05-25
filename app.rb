@@ -40,6 +40,7 @@ end
 
 get('/words/:id') do
   @word = Word.find(params[:id].to_i())
+  @words = Word.all
   erb(:word)
 end
 
@@ -70,25 +71,32 @@ end
 # methods pertaining to word definitions #
 
 get('/words/:id/definitions/:definition_id') do
-  @definition = Definition.find(params[:definition_id].to_i())
+  @definition = Definition.find(params[:id].to_i())
   erb(:definition)
 end
 
-get('/words/:id/definitions') do
-  erb((:words))
+post('/words/:id/definitions/:definition_id') do
+  @definition = Definition.all()
+  erb(:definition)
 end
+
 
 post('/words/:id/definitions') do
   @word = Word.find(params[:id].to_i())
-  definition = Definition.new(:definition => (params[:new_definition]), :word_id => @word.id, :id => nil)
+  @definition = Definition.new({:definition => (params[:new_definition]), :word_id => @word.id, :id => nil})
   definition.save
   erb(:word)
 end
 
-patch('/words/:id/definitions/:definition_id') do
+# get('/words/:id/definitions/') do
+#   @definition = Definition.all()
+#   erb(:definition)
+# end
+
+get('/words/:id/definitions/') do
   @word = Word.find(params[:id].to_i())
-  definition = Definition.find(params[:definition_id].to_i())
-  definition.update(params[:edit_definition], @word.id)
+  @definition = Definition.find(params[:definition_id].to_i())
+  @definition.update(params[:edit_definition], @word.id)
   erb(:word)
 end
 
