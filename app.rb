@@ -43,19 +43,24 @@ get('/words/:id') do
   erb(:word)
 end
 
-# patch('/words/:id') do
-#   @names = Word.find(params[:id].to_i())
-#   @names.update(params[:name])
-#   @names = Word.all
-#   erb(:edit_word)
-# end
+get('/words/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
 
-# delete('/words/:id') do
-#   @names = Word.find(params[:id].to_i())
-#   @names.delete()
-#   @names = Word.all
-#   erb(:edit_word)
-# end
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:name])
+  @word = Word.all
+  erb(:words)
+end
+
+delete('/words/:id') do
+  @names = Word.find(params[:id].to_i())
+  @names.delete()
+  @names = Word.all
+  erb(:words)
+end
 
 # get('/words/search') do
 #   @dictionary = Word.search(params[:name])
@@ -63,6 +68,11 @@ end
 # end
 
 # # methods pertaining to word definitions #
+
+# get('/words/:id/definitions/:definition_id') do
+#   @definition = Definition.find(params[:definition_id].to_i())
+#   erb(:definition)
+# end
 
 # post('/words/:id/definitions') do
 #   @dictionary = Word.find(params[:id].to_i())
