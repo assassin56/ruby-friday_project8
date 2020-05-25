@@ -15,12 +15,12 @@ end
 # methods for the homepage #
 
 get('/') do
-  @names = Word.all
+  @words = Word.all
   erb(:words)
 end
 
 get('/words') do
-  @names = Word.all
+  @words = Word.all
   erb(:words)
 end
 
@@ -28,7 +28,7 @@ post('/words') do
   name = params[:name]
   word = Word.new({:name => name, :id => nil})
   word.save()
-  @names = Word.all()
+  @words = Word.all()
   erb(:words)
 end
 
@@ -48,10 +48,10 @@ get('/words/:id/edit') do
   erb(:edit_word)
 end
 
-patch('/words/:id') do
+post('/words/:id') do
   @word = Word.find(params[:id].to_i())
-  @word.update(params[:name])
-  @word = Word.all
+  @word.update(params[:new_word])
+  @words = Word.all
   erb(:words)
 end
 
