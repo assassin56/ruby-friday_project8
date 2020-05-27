@@ -47,12 +47,11 @@ class Definition
   end
 
   def update(definition, word_id)
-    self.definition = definition
-    self.word_id = word_id
-    # self.save()
+    @definition = definition
+    @word_id = word_id
   end
 
   def delete
-    @@definitions.delete(self.id)
+    @@definitions.delete(@id)
   end
 end
