@@ -1,9 +1,9 @@
 <h3>The Definition: <%= @definition.definition %></h3>
 
-<form action="/words/<%= @definition.word_id %>/definitions/" method="patch">
-  <input name="edit_definition" type="hidden" value="patch">
+<form action="/words/<%= @word.id %>/definitions/<%= @definition.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
   <label for="edit_definition">Change Your Definition?</label>
-  <input id="edit_definition" name="edit_definition" type="text">
+  <input name="edit_definition" type="text">
   <button type="submit">Change</button>
 </form>
 
