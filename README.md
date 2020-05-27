@@ -2,7 +2,7 @@
 ## _By: Antonio Cruz_
 ## Description
 
-_This is a webpage that will allow uers to add words they may be unfamiliar with to a page, and include their corresponding definitions _
+_This is a webpage that will allow uers to add words they may be unfamiliar with to a page, and include their corresponding definitions_
 
 ## Setup
 
@@ -66,7 +66,7 @@ _No known bugs at this time_
 * Behavior: Allow an existing definition to be edited.
   * Input: "Edit definition"
   * Output: New definition "Not Gold" is added to the word "Gold"
-  
+
 ## Legal
 
 #### MIT License
