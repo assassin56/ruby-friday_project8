@@ -7,5 +7,10 @@
   <button type="submit">Change</button>
 </form>
 
+<form action="/words/<%= @word.id %>/definitions/<%= @definition.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn btn-warning">Delete!</button>
+</form>
+
 
 

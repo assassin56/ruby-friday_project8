@@ -18,8 +18,8 @@ describe('creates a definition path', {:type => :feature}) do
     word = Word.new({:name => 'Gold', :id => nil})
     word.save()
     visit("/words/#{word.id}")
-    fill_in('definition', :with => 'A form of currency')
+    fill_in('new_definition', :with => 'A form of currency')
     click_on('Add definition')
-    expect(page).to have_content(false)
+    expect(page).to have_content("A form of currency")
   end
 end

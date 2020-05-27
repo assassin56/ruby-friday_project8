@@ -10,6 +10,6 @@
 <p><a href="/words">Return to the list of Words</a></p>
 
 <form action="/words/<%= @word.id() %>" method="post">
-  <input name="change_word" type="hidden" value="delete">
+  <input name="_method" type="hidden" value="delete">
   <button type="submit">Delete word</button>
 </form>
