@@ -49,6 +49,7 @@ class Definition
   def update(definition, word_id)
     @definition = definition
     @word_id = word_id
+    self.save() 
   end
 
   def delete

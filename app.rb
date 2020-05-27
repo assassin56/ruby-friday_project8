@@ -65,9 +65,9 @@ end
 
 # methods pertaining to word definitions #
 
-get('/words/:id/definitions/:definition_id') do
+get('/words/:id/definitions/:definition_id/edit') do
   @word = Word.find(params[:id].to_i())
-  @definition = Definition.find(params[:id].to_i())
+  @definition = Definition.find(params[:definition_id].to_i())
   erb(:definition)
 end
 
@@ -79,7 +79,7 @@ end
 post('/words/:id/definitions') do
   @word = Word.find(params[:id].to_i())
   @definition = Definition.new({:definition => (params[:new_definition]), :word_id => @word.id, :id => nil})
-  @definition.save
+  @definition.save()
   erb(:word)
 end
 
@@ -87,7 +87,7 @@ end
 patch('/words/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
   @definition = Definition.find(params[:definition_id].to_i())
-  @definition = Definition.update(params[:edit_definition], @word.id)
+  @definition.update(params[:edit_definition], @word.id)
   erb(:word)
 end
 
