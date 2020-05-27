@@ -47,9 +47,26 @@ _No known bugs at this time_
   * Input: "Consistency"
   * Output: The word is added to the dictionary
 
+* Behavior: Allow a word to be deleted
+  * Input: "Delete word"
+  * Output: "Consistency" is deleted.
+
+* Behavior: Allow an existing word to be edited.
+  * Input: "Edit word"
+  * Output: New word "Gold" is added to dictionary
+
 * Behavior: Allow the user to add definitions to their inputted words
   * Input: Consistency: "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness."
   * Output: The definition is stored with the selected word.
+
+* Behavior: Allow a definition to be deleted
+  * Input: "Delete"
+  * Output: "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness." is deleted.
+
+* Behavior: Allow an existing definition to be edited.
+  * Input: "Edit definition"
+  * Output: New definition "Not Gold" is added to the word "Gold"
+  
 ## Legal
 
 #### MIT License
