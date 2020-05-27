@@ -23,3 +23,14 @@ describe('creates a definition path', {:type => :feature}) do
     expect(page).to have_content("A form of currency")
   end
 end
+
+describe('create a delete path for words', {:type => :feature}) do
+  it('deletes a word and returns to the main page.') do
+    word = Word.new({:name => 'Platinum', :id => nil})
+    word.save()
+    # binding.pry
+    visit("/words/#{word.id}/edit")
+    click_on('Delete word')
+    expect(page).not_to have_content('Platinum')
+  end
+end
