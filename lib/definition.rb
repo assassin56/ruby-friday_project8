@@ -46,9 +46,10 @@ class Definition
     (self.definition() == definition_to_compare.definition()) && (self.word_id() == definition_to_compare.word_id())
   end
 
-  def update(definition)
+  def update(definition, word_id)
     self.definition = definition
-    self.save()
+    self.word_id = word_id
+    # self.save()
   end
 
   def delete

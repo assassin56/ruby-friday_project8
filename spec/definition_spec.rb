@@ -38,7 +38,7 @@ describe('#Definition') do
     it('updates a definition based on its id') do
       definition = Definition.new({:definition => "none existent definition", :word_id => @word_id, :id => nil})
       definition.save()
-      definition.update("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.")
+      definition.update("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", @word_id)
       expect(definition.definition).to(eq("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness."))
     end
   end
