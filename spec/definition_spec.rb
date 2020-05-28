@@ -15,9 +15,9 @@ describe('#Definition') do
 
   describe('.clear') do
     it('this test should clear the dictionary of all definitions') do
-      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :word_id => @word_id, :id => nil})
+      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :word_id => 3, :id => nil})
       definition.save()
-      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.", :word_id => @word_id, :id => nil})
+      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.", :word_id => 3, :id => nil})
       definition2.save()
       Definition.clear()
       expect(Definition.all).to(eq([]))
@@ -26,9 +26,9 @@ describe('#Definition') do
 
   describe('.find') do
     it('this test should find a word by its id') do
-      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.",:word_id => @word_id, :id => nil})
+      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.",:word_id => 3, :id => nil})
       definition.save()
-      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.", :word_id => @word_id, :id => nil})
+      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.", :word_id => 3, :id => nil})
       definition2.save()
       expect(Definition.find(definition.id)).to(eq(definition))
     end
@@ -36,18 +36,18 @@ describe('#Definition') do
 
   describe('#update') do
     it('updates a definition based on its id') do
-      definition = Definition.new({:definition => "none existent definition", :word_id => @word_id, :id => nil})
+      definition = Definition.new({:definition => "none existent definition", :word_id => 3, :id => nil})
       definition.save()
-      definition.update("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", @word_id)
+      definition.update("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", 3)
       expect(definition.definition).to(eq("conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness."))
     end
   end
 
   describe('#save') do
     it('updates the word with a new definition.') do
-      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :word_id => @word_id, :id => nil})
+      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :word_id => 3, :id => nil})
       definition.save()
-      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.", :word_id => @word_id, :id => nil})
+      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.", :word_id => 3, :id => nil})
       definition2.save()
       expect(Definition.all).to(eq([definition, definition2]))
     end
@@ -55,9 +55,9 @@ describe('#Definition') do
 
   describe('#==') do
     it('checks for the same definition if it has the same attributes as another definition') do
-      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :word_id => @word_id, :id => nil})
+      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.", :word_id => 3, :id => nil})
       definition.save()
-      definition2 = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.",:word_id => @word_id, :id => nil})
+      definition2 = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.",:word_id => 3, :id => nil})
       definition2.save()
       expect(definition).to(eq(definition2))
     end
@@ -65,9 +65,9 @@ describe('#Definition') do
 
   describe('#delete') do
     it('deletes a definition by id') do
-      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.",:word_id => @word_id, :id => nil})
+      definition = Definition.new({:definition => "conformity in the application of something, typically that which is necessary for the sake of logic, accuracy, or fairness.",:word_id => 3, :id => nil})
       definition.save()
-      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.",:word_id => @word_id, :id => nil})
+      definition2 = Definition.new({:definition => "lack of variety and interest; tedious repetition and routine.",:word_id => 3, :id => nil})
       definition2.save()
       definition.delete()
       expect(Definition.all).to(eq([definition2]))
